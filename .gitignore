@@ -11,3 +11,13 @@ data/raw/*
 data/interim/*
 data/processed/*
 !data/**/.gitkeep
+
+# Tool caches
+.ruff_cache/
+.mypy_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
