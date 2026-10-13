@@ -63,7 +63,8 @@ flowchart TD
 ## Quick start
 
 ```powershell
-cd "C:\Users\Jose\Documents\Github reoi\core-tbi"
+git clone https://github.com/josephreggy23-coder/CoRe-TBI.git
+cd CoRe-TBI
 python -m venv .venv
 .venv\Scripts\activate
 pip install -e ".[dev]"
