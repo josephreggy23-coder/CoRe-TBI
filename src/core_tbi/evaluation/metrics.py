@@ -1,5 +1,4 @@
 from __future__ import annotations
-import numpy as np
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score, f1_score, roc_auc_score, average_precision_score, brier_score_loss
 
