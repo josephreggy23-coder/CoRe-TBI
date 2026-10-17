@@ -21,7 +21,8 @@ app.add_typer(datasets_app, name="datasets")
 
 
 def _paths():
-    root = Path.cwd(); return root / "data", root / "outputs"
+    root = Path.cwd()
+    return root / "data", root / "outputs"
 
 
 @datasets_app.command("list")
