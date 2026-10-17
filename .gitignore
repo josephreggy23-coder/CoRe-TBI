@@ -21,3 +21,5 @@ data/processed/*
 Thumbs.db
 .idea/
 .vscode/
+.coverage
+htmlcov/
