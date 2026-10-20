@@ -66,7 +66,7 @@ flowchart TD
 git clone https://github.com/josephreggy23-coder/CoRe-TBI.git
 cd CoRe-TBI
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
 pip install -e ".[dev]"
 
 # Reproducible demonstration (clearly labelled synthetic)
