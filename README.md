@@ -112,9 +112,11 @@ data/raw/                immutable source files (ignored by Git)
 data/processed/          user-provided ready-to-model tables
 docs/                    rationale, validation plan, data dictionary, rat protocol
 outputs/                 generated reports, metrics, figures, manifests
+scripts/                 thin wrappers for the demo and dataset inspection
 src/core_tbi/data/       data adapters, DLC parser, ALMA extractor
 src/core_tbi/models/     transparent recovery model and baselines
 src/core_tbi/evaluation/ grouped splits and leakage safeguards
+src/core_tbi/visualization/ recovery-plane plots and animal reports
 tests/                   CPU-level regression tests
 ```
 
