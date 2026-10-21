@@ -62,6 +62,8 @@ flowchart TD
 
 ## Quick start
 
+Requires Python 3.11 or newer.
+
 ```powershell
 git clone https://github.com/josephreggy23-coder/CoRe-TBI.git
 cd CoRe-TBI
