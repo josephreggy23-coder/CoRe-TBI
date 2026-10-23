@@ -111,7 +111,8 @@ core-tbi demo
 ```text
 configs/                 experiment and dataset registry YAML
 data/raw/                immutable source files (ignored by Git)
-data/processed/          user-provided ready-to-model tables
+data/interim/            reversible intermediate transformations (ignored by Git)
+data/processed/          user-provided ready-to-model tables (ignored by Git)
 docs/                    rationale, validation plan, data dictionary, rat protocol
 outputs/                 generated reports, metrics, figures, manifests
 scripts/                 thin wrappers for the demo and dataset inspection
