@@ -25,3 +25,8 @@ Thumbs.db
 htmlcov/
 .ipynb_checkpoints/
 coverage.xml
+
+# Build artifacts / local env
+dist/
+build/
+.env
