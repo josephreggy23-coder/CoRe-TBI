@@ -41,12 +41,14 @@ def download_figshare_file(dataset_id: str, file_id: int, destination: str | Pat
     target = Path(destination) / dataset_id / file["name"]
     if target.exists():
         raise FileExistsError(f"Refusing to overwrite raw data: {target}")
-    response = requests.get(file["download_url"], stream=True, timeout=60); response.raise_for_status()
+    response = requests.get(file["download_url"], stream=True, timeout=60)
+    response.raise_for_status()
     digest = hashlib.md5()
     with target.open("xb") as handle:
         for chunk in response.iter_content(chunk_size=1024 * 1024):
             if chunk:
-                handle.write(chunk); digest.update(chunk)
+                handle.write(chunk)
+                digest.update(chunk)
     if file.get("supplied_md5") and digest.hexdigest() != file["supplied_md5"]:
         target.unlink(missing_ok=True)
         raise ValueError("Checksum failed; incomplete file removed.")
