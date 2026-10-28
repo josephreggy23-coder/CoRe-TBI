@@ -12,7 +12,8 @@ def write_run_manifest(output: str | Path, *, command: str, inputs: dict, seed: 
     packages = ["numpy", "pandas", "scikit-learn", "scipy", "core-tbi"]
     versions = {name: _version(name) for name in packages}
     record = {"created_utc": datetime.now(timezone.utc).isoformat(), "command": command, "seed": seed, "inputs": inputs, "package_versions": versions, "git_commit": _git_commit()}
-    output = Path(output); output.parent.mkdir(parents=True, exist_ok=True)
+    output = Path(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(record, indent=2), encoding="utf-8")
     return output
 
