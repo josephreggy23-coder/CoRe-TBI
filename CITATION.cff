@@ -4,3 +4,6 @@ message: "If you use CoRe-TBI, please cite this software and the source datasets
 type: software
 license: MIT
 version: 0.1.0
+authors:
+  - name: "CoRe-TBI contributors"
+repository-code: "https://github.com/josephreggy23-coder/CoRe-TBI"
