@@ -30,3 +30,7 @@ coverage.xml
 dist/
 build/
 .env
+
+# Editor swap files / Windows folder metadata
+*.swp
+desktop.ini
