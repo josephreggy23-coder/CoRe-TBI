@@ -4,6 +4,7 @@ from sklearn.metrics import balanced_accuracy_score, f1_score, roc_auc_score, av
 
 
 def animal_level_metrics(frame: pd.DataFrame, y_true: str = "injury_label", score: str = "injury_probability") -> dict:
+    """Aggregate predictions per animal and compute classification metrics."""
     animal = frame.groupby("animal_id", as_index=False).agg({y_true: "max", score: "mean"})
     truth, probabilities = animal[y_true].astype(int), animal[score].clip(0, 1)
     predicted = (probabilities >= 0.5).astype(int)
