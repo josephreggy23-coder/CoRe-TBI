@@ -133,3 +133,7 @@ tests/                   CPU-level regression tests
 6. Add the prospective repetitive-mild-TBI rat metadata and synchronized LFP interface.
 
 See [docs/scientific_rationale.md](docs/scientific_rationale.md), [docs/compensation_definition.md](docs/compensation_definition.md), and [docs/validation_plan.md](docs/validation_plan.md) for the intended scientific interpretation.
+
+## Contributing and citation
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md) before opening a pull request. If you use this work, please cite it using [CITATION.cff](CITATION.cff).
