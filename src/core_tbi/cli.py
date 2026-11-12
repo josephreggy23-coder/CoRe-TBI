@@ -1,3 +1,4 @@
+"""Typer command-line interface for CoRe-TBI."""
 from __future__ import annotations
 from pathlib import Path
 import json
@@ -21,17 +22,20 @@ app.add_typer(datasets_app, name="datasets")
 
 
 def _paths():
+    """Return the data and outputs directories under the working directory."""
     root = Path.cwd()
     return root / "data", root / "outputs"
 
 
 @datasets_app.command("list")
 def datasets_list():
+    """List registered datasets and their roles."""
     for name, entry in load_registry().items(): typer.echo(f"{name}: {entry['role']}")
 
 
 @datasets_app.command("inspect")
 def datasets_inspect(dataset: str):
+    """Show a dataset's registry entry and inventory any local raw files."""
     entry = get_dataset(dataset); data, outputs = _paths()
     table = inventory_directory(data / "raw" / dataset, outputs / "reports" / f"{dataset}_inventory.html") if (data / "raw" / dataset).exists() else pd.DataFrame()
     typer.echo(json.dumps(entry, indent=2)); typer.echo(f"Inventory rows: {len(table)}. No download or metadata inference performed.")
@@ -49,6 +53,7 @@ def official_inventory(dataset: str):
 
 @datasets_app.command("download")
 def datasets_download(dataset: str, file_id: int = typer.Option(..., help="File ID listed by official-inventory.")):
+    """Download one official Figshare file into data/raw."""
     data, _ = _paths()
     typer.echo(download_figshare_file(dataset, file_id, data / "raw"))
 
